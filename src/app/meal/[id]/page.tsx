@@ -43,18 +43,28 @@ export default async function MealPage({ params }: MealPageProps) {
     return (
         <div className="flex flex-col min-h-screen">
             {/* Immersive Hero Header */}
-            <div className="relative h-[60vh] w-full overflow-hidden">
+            {/* Immersive Hero Header */}
+            <div className="relative h-[85vh] w-full overflow-hidden bg-black">
                 <Image
                     src={meal.strMealThumb}
                     alt={meal.strMeal}
                     fill
-                    className="object-cover brightness-[0.6]"
+                    className="object-cover transition-transform duration-[20s] ease-out scale-105 animate-in zoom-in-110"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
 
-                <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 lg:p-16 text-white max-w-5xl mx-auto">
-                    <div className="container mx-auto px-4 md:px-6 space-y-4 animate-in slide-in-from-bottom-5 fade-in duration-700">
+                {/* Engineering Grade Overlays - Enforce Dark Mode Contrast */}
+                {/* 1. Base Scrim for Text Readability (Bottom) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+
+                {/* 2. Cinematic Vignette (Edges) */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
+
+                {/* 3. Top Header Protection */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent h-32" />
+
+                <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 lg:p-20 text-white max-w-7xl mx-auto z-20">
+                    <div className="container mx-auto px-4 md:px-6 space-y-6 animate-in slide-in-from-bottom-10 fade-in duration-700">
                         <Button variant="outline" size="sm" asChild className="mb-4 bg-black/20 border-white/20 text-white backdrop-blur-md hover:bg-white/20 border-none">
                             <Link href={`/country/${meal.strArea}`} className="gap-2">
                                 <ArrowLeft className="w-4 h-4" />
