@@ -11,7 +11,7 @@ export async function Hero() {
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 z-10 pointer-events-none mix-blend-overlay"></div>
             {/* Static High-Quality Unsplash Image */}
             <Image
-                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1920&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1920&auto=format&fit=crop"
                 alt="Fine Dining Experience"
                 fill
                 priority
